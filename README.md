@@ -2,11 +2,11 @@
 
 ![alt text](https://github.com/nhongphuc/Stock-prediction/blob/main/StockPicture.png)
 
-The goal of this project is to ...
+The goal of this project is to develop models to forecast stock prices. 
 
 ## Data
 
-The data comes from ...
+The data comes from the Nasdaq API. Specifically, we'll use equities data from the Frankfurt Stock Exhange (FSE).
 
 ## Data Wrangling
 
