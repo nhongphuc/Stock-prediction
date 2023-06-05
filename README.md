@@ -23,9 +23,14 @@ The data comes from the Nasdaq API. Specifically, we'll use equities data from t
 - We also used the KPSS test to see if the returns are a stationary time series, and found that we can accept the null hypothesis that it is (the p-value was 0.1, which is larger than 0.05).
 
 ## Preprocessing
-
-
+- We used 5-fold cross-validation with TimeSeriesSplit (which ensures that the split into training set and validation set respects the time ordering).
 
 ## Modelling
+We tried 3 models: the ARIMA model, the Exponential Smoothing model, and the Facebook Prophet. For the performance metric, we chose the MAPE (Mean Absolute Percentage Error). We summarize our findings below:
+- Regarding the ARIMA model, we set the parameter d (in (p,d,q)) to 1, because differentiating the stock prices once yields a stationary time series. We did a hyperparameter search over the p and q parameters, and found that the choice p = 2 and q = 2 yields the smallest (cross-validated) MAPE score, which is approximately 0.15.
+-  Regarding the Exponential Smoothing model, we set the 'trend' parameter to be 'multiplicative', because the upward trend of the stock price doesn't look like a straight line. The MAPE score was found to be around 0.14.
+-  The Facebook Prophet model yielded the MAPE score of around 0.10.
 
 ## Conclusion and future improvement
+We conclude that the Facebook Prophet model is the best model. 
+One possible future improvement is: there might be some slight seasonality in the data (with a period of 2 weeks or so). In the future, it would be interesting to take into account such seasonality more carefully in the models.
