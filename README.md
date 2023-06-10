@@ -31,6 +31,5 @@ We tried 3 models: the ARIMA model, the Exponential Smoothing model, and the Fac
 -  Regarding the Exponential Smoothing model, we set the 'trend' parameter to be 'multiplicative', because the upward trend of the stock price doesn't look like a straight line. The MAPE score was found to be around 0.14.
 -  The Facebook Prophet model yielded the MAPE score of around 0.10.
 
-## Conclusion and future improvement
+## Conclusion 
 We conclude that the Facebook Prophet model is the best model. 
-One possible future improvement is: there might be some slight seasonality in the data (with a period of 2 weeks or so). In the future, it would be interesting to take into account such seasonality more carefully in the models.
